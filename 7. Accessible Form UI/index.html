@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Accessible Form UI </title>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" aria-required="true" name="full-name" id="full-name"
+                    placeholder="What should we Call u?">
+            </div>
+            <div class="form-group">
+                <label for="email">E mail </label>
+                <input type="email" id="email" value="harishsj1006@gmail.com" aria-required="true" aria-invalid="true">
+                <span class="error">E mail is already taken</span>
+            </div>
+            <div class="form-group password-container">
+                <label for="password">Enter Password </label>
+                <input type="password" id="password" placeholder="xxxxxxxxx">
+                <!-- <i class="fa fa-eye password-icon"></i> -->
+            </div>
+            <div class="form-group password-container">
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" id="cpassword" placeholder="xxxxxxxxx">
+                <!-- <i class="fa fa-eye cpassword-icon"></i> -->
+            </div>
+            <div class="form-group">
+                <button type="submit" class="update-button">Update Profile</button>
+            </div>
+        </form>
+    </div>
+    <div class="progress-container">
+        <div class="progress">
+            65%
+        </div>
+        <span>Profile Completeness</span>
+        <div class="grey-box">
+            <ul class="checklist">
+                <li>Create Account</li>
+                <li>Update Roadmap Progrss</li>
+                <li>Setup Public Profile</li>
+                <li class="incomplete">Complete your first project</li>
+                <li class="incomplete">Invite your friends</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
