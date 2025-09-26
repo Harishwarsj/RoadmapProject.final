@@ -7,5 +7,4 @@
 05. Testimonal Card - https://roadmap.sh/projects/testimonial-cards
 06. Datepicker UI - https://roadmap.sh/projects/datepicker-ui
 07. Accessible Form UI - https://roadmap.sh/projects/accessible-form-ui
-**Backend Projects**
-01. Task Tracker - https://roadmap.sh/projects/task-tracker
+
