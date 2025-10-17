@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Textarea Character Counter</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 100px;
+            font-size: 16px;
+            padding: 8px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea.limit-reached {
+            border-color: red;
+        }
+
+        .counter {
+            margin-top: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea id="myTextarea" maxlength="100" placeholder="Type something..."></textarea>
+    <div class="counter" id="charCount">0 / 100 characters</div>
+    <script>
+        const textarea = document.getElementById('myTextarea');
+        const charCount = document.getElementById('charCount');
+        const maxChars = 100;
+
+        textarea.addEventListener('input', () => {
+            const currentLength = textarea.value.length;
+            charCount.textContent = `${currentLength} / ${maxChars} characters`;
+
+            if (currentLength >= maxChars) {
+                textarea.classList.add('limit-reached');
+            } else {
+                textarea.classList.remove('limit-reached');
+            }
+        });
+
+        // Prevent input beyond maxChars even if maxlength attribute is removed or not respected by some browsers
+        textarea.addEventListener('keydown', (e) => {
+            const currentLength = textarea.value.length;
+
+            // Allow special keys: backspace, delete, arrows, home, end, etc.
+            const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End', 'Tab'];
+            console.log(e.key);
+            if (currentLength >= maxChars && !allowedKeys.includes(e.key)) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
