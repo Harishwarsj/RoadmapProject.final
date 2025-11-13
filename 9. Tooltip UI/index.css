@@ -1,0 +1,96 @@
+/* --- Basic styling --- */
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  display: inline-block;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.nav-item a:hover {
+  transform: translateY(-3px);
+}
+
+/* --- Tooltip styling --- */
+.tooltip {
+  position: absolute;
+  bottom: 120%; /* position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* --- Tooltip hover effect --- */
+.nav-item:hover .tooltip {
+  opacity: 1;
+}
+
+/* --- Animation variations --- */
+
+/* Fade-in */
+.tooltip.fade {
+  transform: translateX(-50%) translateY(5px);
+}
+.nav-item:hover .tooltip.fade {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Slide-in */
+.tooltip.slide {
+  transform: translateX(-50%) translateY(15px);
+}
+.nav-item:hover .tooltip.slide {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Scale-in */
+.tooltip.scale {
+  transform: translateX(-50%) scale(0.8);
+}
+.nav-item:hover .tooltip.scale {
+  transform: translateX(-50%) scale(1);
+}
